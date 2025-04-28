@@ -1,9 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 int main()
 {
+    //Welcome and print options.
     printf("\n Welcome to our hospital patient record system !!!\n");
     printf("\n 1. See doctor's list and appointment time \n 2. Create a patient account \n 3. Patient login \n 4. Admin login \n 5. Exit \n");
+
+    //Exit value.
+    bool isExit = false;
+    while(!isExit)
+    {
+        //Input option.
+        int option;
+        printf("\nPlease enter an option: ");
+        scanf("%d", &option);
+
+        switch(option)
+        {
+        case 1:
+            printf("\nSee doctor's list and appointment time\n");
+            break;
+        case 2:
+            printf("\nCreate a patient account\n");
+            break;
+        case 3:
+            printf("\nPatient login\n");
+            break;
+        case 4:
+            printf("\nAdmin login\n");
+            break;
+        case 5:
+            isExit = true;
+            break;
+        default:
+            printf("\nPlease enter a valid option with single digit.\n");
+            break;
+        }
+    }
     return 0;
 }
