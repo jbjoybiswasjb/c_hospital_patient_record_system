@@ -19,6 +19,8 @@ int main()
     printf("\n Welcome to our hospital patient record system !!!\n");
     printf("\n 1. See doctor's list and appointment time \n 2. Create a patient account \n 3. Patient login \n 4. Admin login \n 5. Exit \n");
 
+
+
     //Exit value.
     bool isExit = false;
     while(!isExit)
@@ -27,13 +29,25 @@ int main()
         int option;
         printf("\nPlease enter an option: ");
 
+
+
+
         // Set a validation for only int variable.
         int isDigit = scanf("%d", &option);
-
         if(!isDigit){
             printf("\nPlease choose ONLY a single digit from the above option.\n");
-            break;
+
+            // While new line or user press enter and End Of File getchar() will read each char
+            int character;
+            while((character = getchar()) != '\n' && character != EOF){}
+
+            continue; //For continue the loop and get option.
         }
+
+
+
+
+
 
         switch(option)
         {
