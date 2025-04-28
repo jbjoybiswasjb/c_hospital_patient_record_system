@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1745877128 source:f:\nub\2nd_semester\sd lab\project\hospital_patient_record_system\hospital_patient_record_system\main.c
+1745880283 source:f:\nub\2nd_semester\sd lab\project\hospital_patient_record_system\hospital_patient_record_system\main.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>

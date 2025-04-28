@@ -2,6 +2,17 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+
+//For type check C-11 feature.
+#define TYPEOF(x) _Generic((x), \
+    int: "int", \
+    float: "float", \
+    double: "double", \
+    char: "char", \
+    char*: "string", \
+    default: "unknown" \
+)
+
 int main()
 {
     //Welcome and print options.
@@ -15,7 +26,14 @@ int main()
         //Input option.
         int option;
         printf("\nPlease enter an option: ");
-        scanf("%d", &option);
+
+        // Set a validation for only int variable.
+        int isDigit = scanf("%d", &option);
+
+        if(!isDigit){
+            printf("\nPlease choose ONLY a single digit from the above option.\n");
+            break;
+        }
 
         switch(option)
         {
