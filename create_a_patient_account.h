@@ -9,7 +9,6 @@ typedef struct
     int id;
     char name[50];
     int age;
-    int mobile_number;
     char new_password[10];
     char confirm_new_password[10];
 } PatientInfo;

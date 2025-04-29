@@ -1,21 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+// For boolean value.
 #include <stdbool.h>
+
+// For string value.
 #include <string.h>
 
 // Header file.
 #include "create_a_patient_account.h"
-
-// For type check C-11 feature.
-#define TYPEOF(x) _Generic((x), \
-    int: "int", \
-    float: "float", \
-    double: "double", \
-    char: "char", \
-    char*: "string", \
-    default: "unknown" \
-)
-
 
 
 int main()
