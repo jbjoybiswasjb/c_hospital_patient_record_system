@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 
 // Header file.
 #include "create_a_patient_account.h"
@@ -22,7 +23,6 @@ int main()
     // Welcome and print options.
     printf("\n Welcome to our hospital patient record system !!!\n");
     printf("\n 1. See doctor's list and appointment time \n 2. Create a patient account \n 3. Patient login \n 4. Admin login \n 5. Exit \n");
-
 
 
     // Exit value.
@@ -53,24 +53,14 @@ int main()
 
 
 
+        PatientInfo patient_info;
         switch(option)
         {
         case 1:
-            PatientInfo patientInfo;
-
-            printf("\nEnter your ID: ");
-            scanf("%d", &patientInfo.id);
-            printf("\nEnter your Full Name: ");
-            scanf("%s", &patientInfo.name);
-            printf("\nEnter your Age:");
-            scanf("%d", &patientInfo.age);
-            printf("\nEnter your Mobile Number: ");
-            scanf("%d")
-
-            void createAPatientAccount(patientInfo);
+            printf("\nSee doctor's list and appointment time\n");
             break;
         case 2:
-            printf("\nCreate a patient account\n");
+            createAPatientAccount(patient_info);
             break;
         case 3:
             printf("\nPatient login\n");

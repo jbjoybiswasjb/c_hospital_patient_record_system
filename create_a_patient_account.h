@@ -1,6 +1,8 @@
 #ifndef CREATE_A_PATIENT_ACCOUNT_H
 #define CREATE_A_PATIENT_ACCOUNT_H
 
+#include <string.h>
+
 //Structure.
 typedef struct
 {
@@ -8,12 +10,12 @@ typedef struct
     char name[50];
     int age;
     int mobile_number;
-    char newPassword[10];
-    char ReEnteredNewPassword[10];
+    char new_password[10];
+    char confirm_new_password[10];
 } PatientInfo;
 
 //Function prototype.
-void createAPatientAccount(PatientInfo patientInfo);
+void createAPatientAccount(PatientInfo patient_info);
 
 
 #endif // CREATE_A_PATIENT_ACCOUNT_H
