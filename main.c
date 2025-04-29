@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+// Header file.
+#include "create_a_patient_account.h"
 
-//For type check C-11 feature.
+// For type check C-11 feature.
 #define TYPEOF(x) _Generic((x), \
     int: "int", \
     float: "float", \
@@ -13,19 +15,21 @@
     default: "unknown" \
 )
 
+
+
 int main()
 {
-    //Welcome and print options.
+    // Welcome and print options.
     printf("\n Welcome to our hospital patient record system !!!\n");
     printf("\n 1. See doctor's list and appointment time \n 2. Create a patient account \n 3. Patient login \n 4. Admin login \n 5. Exit \n");
 
 
 
-    //Exit value.
+    // Exit value.
     bool isExit = false;
     while(!isExit)
     {
-        //Input option.
+        // Input option.
         int option;
         printf("\nPlease enter an option: ");
 
@@ -41,7 +45,7 @@ int main()
             int character;
             while((character = getchar()) != '\n' && character != EOF){}
 
-            continue; //For continue the loop and get option.
+            continue; // For continue the loop and get option.
         }
 
 
@@ -52,7 +56,18 @@ int main()
         switch(option)
         {
         case 1:
-            printf("\nSee doctor's list and appointment time\n");
+            PatientInfo patientInfo;
+
+            printf("\nEnter your ID: ");
+            scanf("%d", &patientInfo.id);
+            printf("\nEnter your Full Name: ");
+            scanf("%s", &patientInfo.name);
+            printf("\nEnter your Age:");
+            scanf("%d", &patientInfo.age);
+            printf("\nEnter your Mobile Number: ");
+            scanf("%d")
+
+            void createAPatientAccount(patientInfo);
             break;
         case 2:
             printf("\nCreate a patient account\n");

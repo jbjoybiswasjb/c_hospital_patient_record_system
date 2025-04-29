@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="createAPatientAccount.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="create_a_patient_account.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
