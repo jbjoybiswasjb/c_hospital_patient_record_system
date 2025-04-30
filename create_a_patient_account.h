@@ -3,6 +3,8 @@
 
 #include <string.h>
 
+#define PATIENT_INFO "patient_info.csv"
+
 //Structure.
 typedef struct
 {

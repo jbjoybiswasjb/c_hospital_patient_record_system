@@ -1,16 +1,17 @@
 # depslib dependency file v1.0
-1745918814 source:f:\nub\2nd_semester\sd lab\project\hospital_patient_record_system\hospital_patient_record_system\main.c
+1745973847 source:f:\nub\2nd_semester\sd lab\project\hospital_patient_record_system\hospital_patient_record_system\main.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
 	<string.h>
 	"create_a_patient_account.h"
 
-1745915834 f:\nub\2nd_semester\sd lab\project\hospital_patient_record_system\hospital_patient_record_system\create_a_patient_account.h
+1745941590 f:\nub\2nd_semester\sd lab\project\hospital_patient_record_system\hospital_patient_record_system\create_a_patient_account.h
 	<string.h>
 
-1745938122 source:f:\nub\2nd_semester\sd lab\project\hospital_patient_record_system\hospital_patient_record_system\createapatientaccount.c
+1746013547 source:f:\nub\2nd_semester\sd lab\project\hospital_patient_record_system\hospital_patient_record_system\createapatientaccount.c
 	<stdio.h>
+	<stdlib.h>
 	<string.h>
 	"create_a_patient_account.h"
 

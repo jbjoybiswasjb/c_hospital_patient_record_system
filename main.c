@@ -10,7 +10,6 @@
 // Header file.
 #include "create_a_patient_account.h"
 
-
 int main()
 {
     // Welcome and print options.

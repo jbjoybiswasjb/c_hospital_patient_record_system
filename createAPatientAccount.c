@@ -1,34 +1,58 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 // Header file.
 #include "create_a_patient_account.h"
 
-// For type check C-11 feature.
-#define TYPEOF(x) _Generic((x), \
-    int: "int", \
-    float: "float", \
-    double: "double", \
-    char: "char", \
-    char*: "string", \
-    default: "unknown" \
-)
+#define MAX_LINE 256
+
+// Get the last patient ID from file
+int get_last_id(const char *filename)
+{
+    FILE *file = fopen(filename, "r");
+    if (!file) return 0;
+
+    char line[MAX_LINE];
+    int last_id = 0;
+
+    while (fgets(line, sizeof(line), file)) {
+        line[strcspn(line, "\r\n")] = 0;  // Remove newline
+        if (strlen(line) == 0) continue;
+
+        char *token = strtok(line, ",");
+        if (token) {
+            int id = atoi(token);
+            if (id > last_id) last_id = id;
+        }
+    }
+
+    fclose(file);
+    return last_id;
+}
+
+
 
 void createAPatientAccount(PatientInfo patient_info)
 {
     // ID.
-    static int next_id = 1; // static for auto id generation
+    int last_id = get_last_id(PATIENT_INFO);
+    int next_id = last_id + 1;
     patient_info.id = next_id;
-    next_id++;
-    printf("\nPatient ID: %d\n", patient_info.id);
 
     // Name.
     while(getchar() != '\n');
-    printf("Enter your Full Name: ");
+    printf("\nEnter your Full Name: ");
     scanf("%[^\n]s", patient_info.name);
+    while(!patient_info.name)
+    {
+        printf("\n== Wrong name. ==\n");
+        printf("\nEnter your Full Name: ");
+        scanf("%[^\n]s", patient_info.name);
+    }
 
     // Age.
-    printf("Enter your Age: ");
+    printf("Enter your Ages: ");
     scanf("%d", &patient_info.age);
 
     // New password.
@@ -53,6 +77,17 @@ void createAPatientAccount(PatientInfo patient_info)
     }
     printf("\nSuccessfully created an account. Thank you !!!\n");
 
-    printf("\n%d %s %d %s %s\n", patient_info.id, patient_info.name, patient_info.age, patient_info.new_password, patient_info.confirm_new_password);
-};
+
+
+
+    // For save patient information in CSV file.
+    FILE *file = fopen(PATIENT_INFO, "a");
+    if (!file) {
+        perror("\nError opening file\n");
+        return;
+    }
+    fprintf(file, "%d,%s,%d,%s\n", patient_info.id, patient_info.name, patient_info.age, patient_info.new_password);
+
+    fclose(file);
+}
 
