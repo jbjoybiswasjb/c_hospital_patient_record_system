@@ -1,41 +1,16 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 // Header file.
 #include "create_a_patient_account.h"
+#include "get_id.h"
 
 #define MAX_LINE 256
-
-// Get the last patient ID from file
-int get_last_id(const char *filename)
-{
-    FILE *file = fopen(filename, "r");
-    if (!file) return 0;
-
-    char line[MAX_LINE];
-    int last_id = 0;
-
-    while (fgets(line, sizeof(line), file)) {
-        line[strcspn(line, "\r\n")] = 0;  // Remove newline
-        if (strlen(line) == 0) continue;
-
-        char *token = strtok(line, ",");
-        if (token) {
-            int id = atoi(token);
-            if (id > last_id) last_id = id;
-        }
-    }
-
-    fclose(file);
-    return last_id;
-}
-
-
 
 void createAPatientAccount(PatientInfo patient_info)
 {
     // ID.
+    // Get the last patient ID from file
     int last_id = get_last_id(PATIENT_INFO);
     int next_id = last_id + 1;
     patient_info.id = next_id;
@@ -52,7 +27,7 @@ void createAPatientAccount(PatientInfo patient_info)
     }
 
     // Age.
-    printf("Enter your Ages: ");
+    printf("Enter your Age: ");
     scanf("%d", &patient_info.age);
 
     // New password.
