@@ -9,6 +9,7 @@
 
 // Header file.
 #include "create_a_patient_account.h"
+#include "get_id.h"
 
 int main()
 {

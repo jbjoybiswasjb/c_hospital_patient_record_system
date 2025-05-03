@@ -3,14 +3,13 @@
 
 // Header file.
 #include "create_a_patient_account.h"
-#include "get_id.h"
 
 #define MAX_LINE 256
 
 void createAPatientAccount(PatientInfo patient_info)
 {
     // ID.
-    // Get the last patient ID from file
+    // Get the last patient ID from patientInfo.csv file.
     int last_id = get_last_id(PATIENT_INFO);
     int next_id = last_id + 1;
     patient_info.id = next_id;
