@@ -3,6 +3,7 @@
 
 // Header file.
 #include "create_a_patient_account.h"
+#include "get_last_id_from_patient_info_csv.h"
 
 #define MAX_LINE 256
 
@@ -64,4 +65,5 @@ void createAPatientAccount(PatientInfo patient_info)
 
     fclose(file);
 }
+
 
